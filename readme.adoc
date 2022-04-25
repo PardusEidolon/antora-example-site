@@ -1,0 +1,7 @@
+= Readme
+:description: An antora page quickstart.
+:url-component-1: https://github.com/PardusEidolon/example-a
+
+This is a default repository that uses antora to fetch components from other github repositories.
+
+An example can be found {url-component-1}[here.]
