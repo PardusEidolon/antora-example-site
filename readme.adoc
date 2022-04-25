@@ -4,4 +4,4 @@
 
 This is a default repository that uses antora to fetch components from other github repositories.
 
-An example can be found {url-component-1}[here.]
+An example content repository can be found {url-component-1}[here.]
