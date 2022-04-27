@@ -1,2 +1,2 @@
-FROM nginx:alpine
-COPY build/site/. /usr/share/nginx/html
+FROM pierrezemb/gostatic
+COPY ./build/site/ /srv/http/
