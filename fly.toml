@@ -1,6 +1,6 @@
 # fly.toml file generated for antora-example on 2022-04-27T17:07:14+12:00
 
-app = "antora-example"
+app = "jackcaddy"
 
 kill_signal = "SIGINT"
 kill_timeout = 5
