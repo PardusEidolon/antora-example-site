@@ -1,11 +1,9 @@
 name: Deploy to fly
 
-on: 
-#   push:
-#     branches:
-#       - main
-  # pull_request:
-  workflow_dispatch
+on:
+  repository_dispatch:
+    types: [antora-event-1]
+  workflow_dispatch:
 
 jobs:
   fly_deploy:
@@ -13,6 +11,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.client_payload.ref }}
+      - run: echo ${{ github.event.client_payload.sha }}
       - name: Antora Site
         uses: kameshsampath/antora-site-action@v0.2.4
         with:
