@@ -1,4 +1,4 @@
-name: fly launch
+name: Deploy to fly
 
 on: 
 #   push:
@@ -7,13 +7,7 @@ on:
   # pull_request:
   workflow_dispatch
 
-env:
-  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-  FLY_REGION: syd
-  FLY_ORG: yumiai
-
-  
-jobs:
+  jobs:
   fly_deploy:
     runs-on: ubuntu-latest
     steps:
@@ -23,13 +17,7 @@ jobs:
         uses: kameshsampath/antora-site-action@v0.2.4
         with:
           antora_playbook: playbook.yml
-      # - name: push to branch
-      # - uses: s0/git-publish-subdir-action@develop
-      #    env:
-      #       REPO: self
-      #       BRANCH: release
-      #       FOLDER: build
-      #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Deploy
-        id: deploy
-        uses: brentd/fly-staging-app@v1
+      - name: Fly deploy
+        run: flyctl deploy --remote-only
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
