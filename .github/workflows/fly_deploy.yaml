@@ -19,6 +19,6 @@ jobs:
           antora_playbook: playbook.yml
       - name: Fly deploy
         uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: flyctl deploy --remote-only --nix
+      - run: flyctl deploy --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
