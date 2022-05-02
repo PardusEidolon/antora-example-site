@@ -7,7 +7,7 @@ on:
   # pull_request:
   workflow_dispatch
 
-  jobs:
+jobs:
   fly_deploy:
     runs-on: ubuntu-latest
     steps:
