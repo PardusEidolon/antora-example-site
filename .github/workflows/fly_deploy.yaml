@@ -1,6 +1,7 @@
 name: Deploy to fly
 
 on:
+  push:
   repository_dispatch:
     types: [antora-event-1]
   workflow_dispatch:
